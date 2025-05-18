@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>选择题示例</title>
+  <script>
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+      if (!selected) {
+        alert("请选择一个答案！");
+        return;
+      }
+
+      if (selected.value === "B") {
+        window.location.href = "success.html"; // 正确答案跳转
+      } else {
+        alert("答案错误，请再试一次！");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>2 + 2 = ?</h2>
+  <form onsubmit="event.preventDefault(); checkAnswer();">
+    <label><input type="radio" name="answer" value="A"> A. 3</label><br>
+    <label><input type="radio" name="answer" value="B"> B. 4</label><br><br>
+    <button type="submit">提交</button>
+  </form>
+</body>
+</html>
